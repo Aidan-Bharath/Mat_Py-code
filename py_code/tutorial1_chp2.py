@@ -21,10 +21,12 @@ if __name__ == "__main__":
     # Basic array creation using the numpy package is straight forward using
     # np.array([]). It is important however to understand how these structures
     # behave. There are several basic types of structures in python but here we
-    # will focus on lists, numpy arrays and dict objects.
+    # will focus on lists and numpy arrays. Other containers such as tuples,
+    # sets and dictionaries (associative arrays) can be very useful when
+    # working with various types of data.
+
     l = []  # a list
     a = np.array([]) # a numpy array (or just array)
-    d = {} # a dict
 
     # notice a numpy array is made from a list. As an example,
     l = [i for i in range(10)]
@@ -142,6 +144,12 @@ if __name__ == "__main__":
     c = np.concatenate([x[:,None].T,y[:,None].T,z[:,None].T],axis=0).T
 
     print a.shape,b.shape,c.shape
+
+    # We can see that using np.concatenate() is a little more complex in some
+    # cases but the added control can be beneficial in some cases.
+
+    # With a little on basic numpy array creation and manipulation covered we
+    # can briefly introduce the dict object or hash table.
 
 
 
