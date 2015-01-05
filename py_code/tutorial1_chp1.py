@@ -8,7 +8,12 @@
 #
 ### ------------------------------------------
 
-# initial package imports
+# initial package imports. Python itself is built up of several packages which
+# extend the basic functionality of the language. To use then in a script they
+# must first be imported similar to C. The statement 'import numpy as np' means
+# that we are importing the entire numpy package and specifying np as the
+# package name. np is then used to specify what package a function is coming
+# from.
 
 from __future__ import division
 import sympy as sp
@@ -46,14 +51,15 @@ if __name__ == "__main__":
     a = [b[i]/2 for i in range(len(b))]
     print a,b
 
-    # b is defined as a list type object which does not support mathematical
-    # broadcasting hence the list loop to iterate the solutions for a.
-    # Python broadcasting/Vectorized calculations are Extremely useful though
+    # b is defined as a list type object which does not support
+    # broadcasting hence the list loop to iterate the solutions for a. Matlab
+    # supports this as well.
+    # Python broadcasting/Vectorized calculations are extremely useful though
     # so lets see how this works.
     # Just make b a numpy array.
     b = np.array(b) # Note here b has been redefined
 
-    # Now make a by broadcasting division accross the b array
+    # division on a numpy array is applied elementwise by default.
     a = b/2
     print a, b
 

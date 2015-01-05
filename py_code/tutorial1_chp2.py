@@ -148,10 +148,41 @@ if __name__ == "__main__":
     # We can see that using np.concatenate() is a little more complex in some
     # cases but the added control can be beneficial in some cases.
 
-    # With a little on basic numpy array creation and manipulation covered we
-    # can briefly introduce the dict object or hash table.
+    # Now once and array has been created we may need to reshape or slice
+    # specific bits out. We can easily reshape an array with the reshape
+    # function.
 
+    print b.reshape(100,3).shape, b.reshape(3,100).shape, b.reshape(30,10).shape
 
+    # Now reshape has build in functionality to change the way in which reshape
+    # works, be it either a C or Fortran style with C as default. This is
+    # highlighted in the following two print statements.
+
+    print b.reshape(100,3)[:2,:]
+    print b.reshape(100,3,order='F')[:2,:]
+
+    # The previous two prints are also sliced versions of the original b array.
+    # the colon can be read as 'all'.
+
+    a = np.linspace(1,10,10)
+    print a[-1]
+    print a[:1],a[0:5],a[0:5:2]
+    print a[4:8],a[4:8:2],a[4:8:4],a[4:8:3]
+
+    # What do you notice about the indexing?
+
+    # All higher dimensional arrays are sliced by the same syntax but each
+    # column slices are separated by a comma.
+
+    a = np.array([[1,2,3],[4,5,6]])
+    print a, a[1,:], a[:,0], a[::1,0]
+
+    # Why are the last two the same?
+
+    # slicing arrays by their index is a very useful skill and understanding
+    # how the slicing syntax works is beneficial to learn quickly. Smart array
+    # slicing becomes very important once the time comes to begin optimizing or
+    # speeding up code.
 
 
 
